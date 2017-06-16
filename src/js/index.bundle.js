@@ -63,33 +63,23 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
 /***/ (function(module, exports) {
 
-throw new Error("Module parse failed: F:\\projects\\webstormProjects\\try\\src\\views\\test.vue Unexpected token (1:0)\nYou may need an appropriate loader to handle this file type.\n| <template>\r\n|     <div>\r\n|         <span>just test</span>\r");
-
-/***/ }),
-/* 1 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__views_test_vue__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__views_test_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__views_test_vue__);
 /**
  * Created by Administrator on 2017/6/14.
  */
-
+// import test from '../views/test.vue'
 new Vue({
     el:'#app',
     data:{
         msg:"hello vue!"
     },
-    components:{test: __WEBPACK_IMPORTED_MODULE_0__views_test_vue__["default"]}
+    // components:{test}
 });
 
 /***/ })
