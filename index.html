@@ -2,7 +2,99 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>饿了吗</title>
+    <title>webpack is good</title>
+    <!--为了减少http请求，直接将打包好的公共部分的文件读取到html中，提高性能；
+       ①不能使用node.js的api直接读取文件内容，因为如果使用它读取的话则不经过webpack流
+       ②如果经过webpack打包，则无法使用node.js的api读取文件内容
+    -->
+    <script type="text/script">
+        /******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// identity function for calling harmony imports with the correct context
+/******/ 	__webpack_require__.i = function(value) { return value; };
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, {
+/******/ 				configurable: false,
+/******/ 				enumerable: true,
+/******/ 				get: getter
+/******/ 			});
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ (function(module, exports) {
+
+/**
+ * Created by Administrator on 2017/6/14.
+ */
+// import test from '../views/test.vue'
+new Vue({
+    el:'#app',
+    data:{
+        msg:"hello vue!"
+    },
+    // components:{test}
+});
+
+/***/ })
+/******/ ]);
+    </script>
 </head>
 <style>
     [v-cloak]{display:none}
@@ -11,7 +103,50 @@
   <div id="app">
       {{msg}}
   </div>
+  <!--<div class="test">-->
+      <!--&lt;!&ndash;&ndash;&gt;-->
+         <!--&lt;!&ndash;publicPath:""<br>&ndash;&gt;-->
+      <!--&lt;!&ndash;&ndash;&gt;-->
+         <!--&lt;!&ndash;chunks:{"index":{"size":196,"entry":"src/js/index.bundle.js","hash":"730b7b29c8d2efdb188a","css":[]}}<br>&ndash;&gt;-->
+      <!--&lt;!&ndash;&ndash;&gt;-->
+         <!--&lt;!&ndash;js:["src/js/index.bundle.js"]<br>&ndash;&gt;-->
+      <!--&lt;!&ndash;&ndash;&gt;-->
+         <!--&lt;!&ndash;css:[]<br>&ndash;&gt;-->
+      <!--&lt;!&ndash;&ndash;&gt;-->
+         <!--&lt;!&ndash;manifest:<br>&ndash;&gt;-->
+      <!--&lt;!&ndash;&ndash;&gt;-->
+
+      <!--&lt;!&ndash;&ndash;&gt;-->
+      <!--&lt;!&ndash;template:"F:\\projects\\webstormProjects\\try\\node_modules\\html-webpack-plugin\\lib\\loader.js!F:\\projects\\webstormProjects\\try\\home.html"<br>&ndash;&gt;-->
+      <!--&lt;!&ndash;&ndash;&gt;-->
+      <!--&lt;!&ndash;filename:"index.html"<br>&ndash;&gt;-->
+      <!--&lt;!&ndash;&ndash;&gt;-->
+      <!--&lt;!&ndash;hash:false<br>&ndash;&gt;-->
+      <!--&lt;!&ndash;&ndash;&gt;-->
+      <!--&lt;!&ndash;inject:true<br>&ndash;&gt;-->
+      <!--&lt;!&ndash;&ndash;&gt;-->
+      <!--&lt;!&ndash;compile:true<br>&ndash;&gt;-->
+      <!--&lt;!&ndash;&ndash;&gt;-->
+      <!--&lt;!&ndash;favicon:false<br>&ndash;&gt;-->
+      <!--&lt;!&ndash;&ndash;&gt;-->
+      <!--&lt;!&ndash;minify:false<br>&ndash;&gt;-->
+      <!--&lt;!&ndash;&ndash;&gt;-->
+      <!--&lt;!&ndash;cache:true<br>&ndash;&gt;-->
+      <!--&lt;!&ndash;&ndash;&gt;-->
+      <!--&lt;!&ndash;showErrors:true<br>&ndash;&gt;-->
+      <!--&lt;!&ndash;&ndash;&gt;-->
+      <!--&lt;!&ndash;chunks:"all"<br>&ndash;&gt;-->
+      <!--&lt;!&ndash;&ndash;&gt;-->
+      <!--&lt;!&ndash;excludeChunks:[]<br>&ndash;&gt;-->
+      <!--&lt;!&ndash;&ndash;&gt;-->
+      <!--&lt;!&ndash;title:"webpack is good"<br>&ndash;&gt;-->
+      <!--&lt;!&ndash;&ndash;&gt;-->
+      <!--&lt;!&ndash;xhtml:false<br>&ndash;&gt;-->
+      <!--&lt;!&ndash;&ndash;&gt;-->
+  <!--</div>-->
+   
+      
+   
   <script src="node_modules/vue/dist/vue.min.js"></script>
-  <script src="src/js/index.bundle.js"></script>
-</body>
+<script type="text/javascript" src="src/js/index.bundle.js"></script></body>
 </html>

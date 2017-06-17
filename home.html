@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <!--为了减少http请求，直接将打包好的公共部分的文件读取到html中，提高性能；
+       ①不能使用node.js的api直接读取文件内容，因为如果使用它读取的话则不经过webpack流
+       ②如果经过webpack打包，则无法使用node.js的api读取文件内容
+    -->
+    <script type="text/script">
+        <%=compilation.assets[htmlWebpackPlugin.files.chunks.index.entry].source()%>
+    </script>
+</head>
+<style>
+    [v-cloak]{display:none}
+</style>
+<body>
+  <div id="app">
+      {{msg}}
+  </div>
+  <!--<div class="test">-->
+      <!--&lt;!&ndash;<% for(var key in htmlWebpackPlugin.files){ %>&ndash;&gt;-->
+         <!--&lt;!&ndash;<%= key %>:<%=JSON.stringify(htmlWebpackPlugin.files[key])%><br>&ndash;&gt;-->
+      <!--&lt;!&ndash;<%}%>&ndash;&gt;-->
+
+      <!--&lt;!&ndash;<% for(var key in htmlWebpackPlugin.options){ %>&ndash;&gt;-->
+      <!--&lt;!&ndash;<%= key %>:<%=JSON.stringify(htmlWebpackPlugin.options[key])%><br>&ndash;&gt;-->
+      <!--&lt;!&ndash;<%}%>&ndash;&gt;-->
+  <!--</div>-->
+   <% for (var k in htmlWebpackPlugin.files.chunks){%>
+      <% if (k!='index'){%>
+         <script src="<% htmlWebpackPlugin.files.chunks[k].entry%>"></script>
+      <%}%>
+   <%}%>
+  <script src="node_modules/vue/dist/vue.min.js"></script>
+</body>
+</html>
