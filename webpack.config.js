@@ -2,6 +2,7 @@
  * Created by Administrator on 2017/6/14.
  */
 var htmlWebpackPlugin=require("html-webpack-plugin");
+var ExtractTextPlugin=require("extract-text-webpack-plugin");
 module.exports={
 /*
   ①entry:"name"
@@ -19,20 +20,30 @@ module.exports={
         //publicPath是打包之后发布的地址，发布后加上publicPath，引入的js文件会自动加上打包后的地址
         // publicPath:"http://www.test"
     },
-    // modules:{
-    //     loaders:[
-    //         {
-    //             test:/\.vue$/,
-    //             loader:'vue'
-    //         }
-    //     ]
-    // },
+    module:{
+        rules:[
+            {
+                test:/\.vue$/,
+                loader:'vue-loader'
+            },
+            {
+                test:/\.css$/,
+                loader:'style-loader!css-loader?importLoaders=1!postcss-loader'
+                //postcss是一个用来处理css的工具，有很多插件支持，功能强大
+                //插件引用在postcss.config.js中配置
+            },
+            {
+                test:/\.html$/,
+                loader:'html-loader'
+            },
+        ]
+    },
     // vue:{
-    //     loaders:{
-    //         js:'babel',
-    //         css:ExtractTextPlugin.extract({fallback:'vue-style-loader',use:'css-loader sass-loader'}),
-    //         exclude:/node_modules/
-    //     }
+    //    loaders:{
+    //        css: ExtractTextPlugin.extract("css"),
+    //        less: ExtractTextPlugin.extract("css!less"),
+    //        sass: ExtractTextPlugin.extract("css!sass")
+    //    }
     // },
     plugins:[
         new htmlWebpackPlugin({
@@ -47,7 +58,9 @@ module.exports={
             //     removeComments:true,  //删除注释
             //     collapseWhitespace:true  //去掉空格
             // }
-        })
-    ]
+        }),
+        // new ExtractTextPlugin("style.css")
+    ],
+    watch:true
 }
 
