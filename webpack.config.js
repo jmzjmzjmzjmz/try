@@ -1,35 +1,8 @@
 /**
  * Created by Administrator on 2017/6/14.
  */
-<<<<<<< HEAD
-// var ExtractTextPlugin=require('extract-text-webpack-plugin');
-=======
 var htmlWebpackPlugin=require("html-webpack-plugin");
->>>>>>> dev
 module.exports={
-<<<<<<< HEAD
-    entry:"./src/js/index.js",
-    output:{
-<<<<<<< HEAD
-        path:'/jmz/projects/try/src/js',
-        filename:'index.bundle.js'
-    }
-<<<<<<< HEAD
-}
-=======
-        path:'/projects/webstormProjects/try/src/js',
-        filename:'index.bundle.js'
-    },
-    // modules:{
-    //     loaders:[
-    //         // {
-    //         //     test:/\.vue$/,
-    //         //     loader:'vue'
-    //         // }
-    //     ]
-    // }
-=======
-=======
 /*
   ①entry:"name"
   ②entry:["name1","name2"] 打包在同一个js文件中，打包文件自动通过require引入
@@ -54,7 +27,6 @@ module.exports={
     //         }
     //     ]
     // },
->>>>>>> dev
     // vue:{
     //     loaders:{
     //         js:'babel',
@@ -62,10 +34,6 @@ module.exports={
     //         exclude:/node_modules/
     //     }
     // },
-<<<<<<< HEAD
-    }
->>>>>>> 7daf693e02b9593622a959ebabb9f26e658e4b71
-=======
     plugins:[
         new htmlWebpackPlugin({
             filename:"index.html", //地址默认在output里的path中
@@ -81,6 +49,5 @@ module.exports={
             // }
         })
     ]
->>>>>>> 1344933080f1dfbc9fe7f6067de42e7d8c32e722
 }
->>>>>>> dev
+
