@@ -10,13 +10,13 @@ module.exports={
   ③entry:{chunk1:"name1",chunk2:"name2"}
      多个chunk
      a)如果output写死是一个文件，则打包会覆盖前一个；
-     b)output可以通过[name]\[hash]\[trunkhash]来区分打包后的js文件名，如filename:"js/[name].bundle.js"
+     b)output可以通过[name]\[hash]\[trunkhash]来区分打包后的js文件名，如filename:"dist/[name].bundle.dist"
  */
-    // entry:"./src/js/index.js",
-    entry:{index:"./src/js/index.js"},
+    // entry:"./src/dist/index.dist",
+    entry:{index:"./home.js"},
     output:{
         path:__dirname+'',
-        filename:'src/js/[name].bundle.js'
+        filename:'dist/js/[name].bundle.js'
         //publicPath是打包之后发布的地址，发布后加上publicPath，引入的js文件会自动加上打包后的地址
         // publicPath:"http://www.test"
     },
@@ -52,7 +52,8 @@ module.exports={
             //将打包好的js文件加在head里
             //如果部分放在head，部分放在body,则inject:false
             // inject:"head",
-            title:"webpack is good",  //在html模板中通过脚本获得 <%= htmlWebpackPlugin.options.title %>
+            title:'try-vue'
+            //在html模板中通过脚本获得 <%= htmlWebpackPlugin.options.title %>
             //压缩命令
             // minify:{
             //     removeComments:true,  //删除注释

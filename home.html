@@ -2,15 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title><%= htmlWebpackPlugin.options.title %></title>
+    <!--webpack.config.js有loader时，<%失效%>-->
+    <!--<title><%= htmlWebpackPlugin.options.title %></title>-->
+    <title>try-vue</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 </head>
 <style>
     [v-cloak]{display:none}
 </style>
 <body>
   <div id="app">
-      {{msg}}
-      <test></test>
+     <main-page></main-page>
   </div>
   <script src="node_modules/vue/dist/vue.min.js"></script>
 </body>
