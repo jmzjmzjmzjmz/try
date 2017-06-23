@@ -6,10 +6,19 @@
     </div>
 </template>
 <style>
-    html,body{
-    width:100%;
-    height:100%
-    background:grey;
+     .main{
+      height:100%;
+       }
+    .main>header{
+      height:10%;
+      background:cornflowerblue;
+    }
+    .main>section{
+      height:80%;
+    }
+    .main>footer{
+      height:10%;
+      background:lightgrey;
     }
 </style>
 export default{

@@ -24,7 +24,7 @@ module.exports={
         rules:[
             {
                 test:/\.vue$/,
-                loader:'vue-loader'
+                loader: 'vue-loader',
             },
             {
                 test:/\.css$/,
@@ -38,13 +38,6 @@ module.exports={
             },
         ]
     },
-    // vue:{
-    //    loaders:{
-    //        css: ExtractTextPlugin.extract("css"),
-    //        less: ExtractTextPlugin.extract("css!less"),
-    //        sass: ExtractTextPlugin.extract("css!sass")
-    //    }
-    // },
     plugins:[
         new htmlWebpackPlugin({
             filename:"index.html", //地址默认在output里的path中
