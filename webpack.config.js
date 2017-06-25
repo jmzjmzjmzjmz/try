@@ -23,6 +23,11 @@ module.exports={
     module:{
         rules:[
             {
+                test:/\.js/,
+                loader:'babel-loader',
+                query:{presets:['es2015']}
+            },
+            {
                 test:/\.vue$/,
                 loader: 'vue-loader',
             },
@@ -31,6 +36,13 @@ module.exports={
                 loader:'style-loader!css-loader?importLoaders=1!postcss-loader'
                 //postcss是一个用来处理css的工具，有很多插件支持，功能强大
                 //插件引用在postcss.config.js中配置
+            },
+            {
+                test:/\.(png|jpg|gif|svg)$/i,
+                loaders:['url-loader?limit=1000&name=dist/images/[name]-[hash:5].[ext]',
+                    'image-webpack-loader']
+                //    url-loader对比file-loader?url-loader可以设置
+                //    img-webpack对图片进行压缩之后再打包
             },
             {
                 test:/\.html$/,
