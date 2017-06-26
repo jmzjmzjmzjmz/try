@@ -1,13 +1,20 @@
 <template>
     <div class="main">
-        <div class="content">
+        <div class="content" @scroll="touchTop" ref="content">
             <header>
                 <div class="top">
                     <img class="placeIcon" src="../imgs/location.png"/>
                     <span>东方文荟苑</span>
                     <img class="solidArrow" src="../imgs/solidArrow.png"/>
                 </div>
-                <div class="center">
+                <div class="center" ref="inputSearch">
+                    <input type="text" class="bigSearch">
+                    <div class="inputText">
+                        <img src="../imgs/search.png"/>
+                        <span>搜索商家、商品名称</span>
+                    </div>
+                </div>
+                <div class="center" id="topSearch" v-if="showTopSearch">
                     <input type="text" class="bigSearch">
                     <div class="inputText">
                         <img src="../imgs/search.png"/>
@@ -104,6 +111,12 @@
         height: 12px;
         padding-right:10px;
     }
+    #topSearch{
+        position: fixed;
+        top:0px;
+        z-index:999;
+        height:7.91856%;
+    }
     .main>.content>header>.bottom{
         height:24%;
     }
@@ -136,9 +149,39 @@
     import firstFloor from './take-out/firstFloor.vue'
     import secondFloor from './take-out/secondFloor.vue'
     export default{
+        data:function(){
+          return{
+              showTopSearch:false
+          }
+        },
         components: {
             'first-floor':firstFloor,
             'second-floor':secondFloor
+        },
+        methods:{
+            touchTop:function(){
+               var inputSearch=this.$refs.inputSearch;
+                var mtop=inputSearch.offsetTop;
+                var stop=this.$refs.content.scrollTop;
+                var htop=mtop-stop;
+                var up=true;
+                if(mtop>stop){
+                  up=true;
+                }else if(mtop<stop){
+                   up=false;
+                }
+                if(htop==0){
+                    alert(up);
+                    this.showTopSearch=up;
+//                    if(up==true){
+//                        this.showTopSearch=true;
+//                    }else{
+//                        this.showTopSearch=false;
+//                    }
+//                    alert(up);
+                }
+
+            }
         }
     }
 </script>

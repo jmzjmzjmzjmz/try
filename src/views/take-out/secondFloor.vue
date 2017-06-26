@@ -8,6 +8,7 @@
          <img :src="item.img"/>
 
        </div>
+        <div style="background:orange;height: 200px;width: 100%;"></div>
     </div>
 </template>
 <style>
