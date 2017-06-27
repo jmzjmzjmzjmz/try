@@ -38,6 +38,10 @@ module.exports={
                 //插件引用在postcss.config.js中配置
             },
             {
+                test: /\.(woff|woff2|ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+                loader: 'file-loader?name=./fonts/[name].[ext]'
+            },
+            {
                 test:/\.(png|jpg|gif|svg)$/i,
                 loaders:['url-loader?limit=1000&name=dist/images/[name]-[hash:5].[ext]',
                     'image-webpack-loader']

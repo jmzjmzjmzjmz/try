@@ -7,14 +7,35 @@ body{
     padding:0px;
     box-sizing: border-box;
     font-size:12px;
-    background: rgb(202,198,195);
+    background: rgb(245,245,245);
+    color: grey;
 }
 #app{
     height:100%;
 }
 ul,li{
     list-style-type:none;
-    float: left;
     padding:0;
     margin:0;
+}
+@font-face{
+    font-family:'imooc-icon';
+    src: url("../fonts/icomoon.eot");
+    src: url("../fonts/icomoon.eot?#iefix") format("embedded-opentype")
+        ,url("../fonts/icomoon.svg") format("svg")
+        ,url("../fonts/icomoon.ttf") format("truetype")
+        ,url("../fonts/icomoon.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+.imooc-icon{
+    font-family:"imooc-icon";
+    font-style:normal;
+    font-weight:normal;
+    /*禁止webkit做最小字号处理*/
+    -webkit-text-size-adjust:none;
+    font-size:20px;
+    /*抗锯齿效果，光滑度*/
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }

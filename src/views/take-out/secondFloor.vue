@@ -6,20 +6,18 @@
             <span class="smallFont">{{item.des}}</span>
          </div>
          <img :src="item.img"/>
-
        </div>
-        <div style="background:orange;height: 200px;width: 100%;"></div>
     </div>
 </template>
 <style>
     .boldFont{
+        color: #000;
         font-size:14px;
         font-weight:bold;
     }
     .smallFont{
         font-size:10px;
         -webkit-transform: scale(0.8);
-        color: grey;
     }
     .secondFloor>.secondFood{
         box-sizing: border-box;

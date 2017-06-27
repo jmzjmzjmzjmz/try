@@ -19,6 +19,7 @@
         width: 25%;
         margin-top: 5%;
         text-align: center;
+        color: grey;
     }
 
     .firstFloor > .firstFood img {

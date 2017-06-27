@@ -2,43 +2,17 @@
     <div class="main">
         <div class="content" @scroll="touchTop" ref="content">
             <header>
-                <div class="top">
-                    <img class="placeIcon" src="../imgs/location.png"/>
-                    <span>东方文荟苑</span>
-                    <img class="solidArrow" src="../imgs/solidArrow.png"/>
-                </div>
-                <div class="center" ref="inputSearch">
-                    <input type="text" class="bigSearch">
-                    <div class="inputText">
-                        <img src="../imgs/search.png"/>
-                        <span>搜索商家、商品名称</span>
-                    </div>
-                </div>
-                <div class="center" id="topSearch" v-if="showTopSearch">
-                    <input type="text" class="bigSearch">
-                    <div class="inputText">
-                        <img src="../imgs/search.png"/>
-                        <span>搜索商家、商品名称</span>
-                    </div>
-                </div>
-                <div class="bottom">
-                    <ul>
-                        <li>混沌</li>
-                        <li>豆沙粽</li>
-                        <li>手扒鸡</li>
-                        <li>鸡柳</li>
-                        <li>我的菜</li>
-                        <li>花甲</li>
-                        <li>鸡蛋面</li>
-                    </ul>
-                </div>
+                <top-header :stop="stop"></top-header>
             </header>
             <section>
                 <first-floor></first-floor>
                 <second-floor></second-floor>
+                <third-floor></third-floor>
             </section>
         </div>
-        <footer>底部</footer>
+            <footer>
+                <bottom-footer></bottom-footer>
+            </footer>
     </div>
 </template>
 <style>
@@ -51,136 +25,46 @@
         overflow-y: auto;
         overflow-x: hidden;
     }
-    .main >.content > header {
-        /*height: 22%;*/
+    .main>.content>header {
         height: 24.44%;
-        background: cornflowerblue;
+        background: rgb(0,149,254);
         color: white;
         position: relative;
     }
-
-    .main >.content > header > .top {
-        height:40%;
-        padding-left: 8%;
-        display: flex;
-        align-items: center;
-
-    }
-    .main >.content > header > .top>span{
-        font-size: 16px;
-    }
-
-    .main >.content > header > .top > .placeIcon {
-        width: 12px;
-        height: 15px;
-        margin-right: 5px;
-    }
-
-    .main >.content > header > .top > .solidArrow {
-        width: 7px;
-        height: 8px;
-        transform: rotate(90deg);
-        margin-left:8px;
-    }
-    .main >.content > header > .center{
-        height:36%;
-        width:100%;
-        display: flex;
-        justify-content:center;
-        align-items:center;
-        align-content:center;
-        position: relative;
-        background: red;
-    }
-    .main >.content > header > .center>input.bigSearch{
-        display: inline-block;
-        width:95%;
-        height:70%;
-        border-radius: 24px;
-        border-style:none;
-    }
-    .main >.content > header > .center>.inputText{
-        position: absolute;
-        left: 50%;
-        top:50%;
-        transform:translate(-50%,-50%);
-        color: dimgrey;
-    }
-    .main >.content > header > .center>.inputText>img{
-        width: 12px;
-        height: 12px;
-        padding-right:10px;
-    }
-    #topSearch{
-        position: fixed;
-        top:0px;
-        z-index:999;
-        height:7.91856%;
-    }
-    .main>.content>header>.bottom{
-        height:24%;
-    }
-    .main>.content>header>.bottom>ul{
-        width:100%;
-        height:100%;
-        display: flex;
-        justify-content:center;
-        align-items: center;
-    }
-    .main>.content>header>.bottom>ul>li{
-        width:14.2%;
-        text-align: center;
-        font-size:10px;
-        -webkit-transform: scale(0.8);
-    }
     .main >.content> section {
-        /*height: 68%;*/
-        height: 75.55%;
+        height: 77.55%;
     }
 
     .main > footer {
-        position:absolute;
+        position: fixed;
         width:100%;
-        height: 10%;
-        background: lightgrey;
+        height: 8%;
+        bottom:0px;
     }
 </style>
 <script>
+    import topHeader from './take-out/topHeader.vue'
     import firstFloor from './take-out/firstFloor.vue'
     import secondFloor from './take-out/secondFloor.vue'
+    import thirdFloor from './take-out/thirdFloor.vue'
+    import bottomFooter from './components/bottomFoot.vue'
     export default{
         data:function(){
           return{
-              showTopSearch:false
+              mtop:0,
+              stop:0,
           }
         },
         components: {
+            'top-header':topHeader,
             'first-floor':firstFloor,
-            'second-floor':secondFloor
+            'second-floor':secondFloor,
+            'third-floor':thirdFloor,
+            'bottom-footer':bottomFooter
         },
         methods:{
             touchTop:function(){
-               var inputSearch=this.$refs.inputSearch;
-                var mtop=inputSearch.offsetTop;
-                var stop=this.$refs.content.scrollTop;
-                var htop=mtop-stop;
-                var up=true;
-                if(mtop>stop){
-                  up=true;
-                }else if(mtop<stop){
-                   up=false;
-                }
-                if(htop==0){
-                    alert(up);
-                    this.showTopSearch=up;
-//                    if(up==true){
-//                        this.showTopSearch=true;
-//                    }else{
-//                        this.showTopSearch=false;
-//                    }
-//                    alert(up);
-                }
-
+                this.stop=this.$refs.content.scrollTop;
             }
         }
     }
