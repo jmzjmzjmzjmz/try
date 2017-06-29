@@ -6,8 +6,31 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 </head>
 <body>
-   <div id="app">
-      <find></find>
-   </div>
+   <!--<div id="app">-->
+      <!--<find></find>-->
+       <!--<bottom-foot></bottom-foot>-->
+   <!--</div>-->
+   <div id="container" style="height:100%"></div>
+   <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.3&key=6674e408e60c12a68624606ea99f3a85"></script>
+   <script type="text/javascript">
+       (function(){
+           var map=new AMap.Map('container');
+           map.setZoom(15);
+           map.plugin('AMap.Geolocation',function(){
+                       var geolocation=new AMap.Geolocation({
+                           enableHighAccuracy:true,
+                           convert:true,
+                           panToLocation:true,
+                           showMarker:true,
+                           timeout:60000
+                       });
+                       geolocation.getCurrentPosition();
+                       AMap.event.addListener(geolocation,'complete',function(e){
+                           console.log(e);
+                       })
+                   }
+           )}
+           )();
+   </script>
 <script type="text/javascript" src="dist/js/find.bundle.js"></script></body>
 </html>
