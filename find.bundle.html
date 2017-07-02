@@ -19,15 +19,16 @@
            map.plugin('AMap.Geolocation',function(){
                        var geolocation=new AMap.Geolocation({
                            enableHighAccuracy:true,
-                           convert:true,
+                           convert:false,
                            panToLocation:true,
                            showMarker:true,
+                           showCircle: true,
                            timeout:60000
                        });
                        geolocation.getCurrentPosition();
                        AMap.event.addListener(geolocation,'complete',function(e){
                            console.log(e);
-                       })
+                       });
                    }
            )}
            )();

@@ -487,7 +487,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "F:\\projects\\webstormProjects\\try\\src\\components\\bottomFoot.vue"
+Component.options.__file = "G:\\jmz\\projects\\try\\src\\components\\bottomFoot.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] bottomFoot.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -10202,7 +10202,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "F:\\projects\\webstormProjects\\try\\src\\views\\take-out\\main.vue"
+Component.options.__file = "G:\\jmz\\projects\\try\\src\\views\\take-out\\main.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] main.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -10767,7 +10767,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "F:\\projects\\webstormProjects\\try\\src\\views\\take-out\\firstFloor.vue"
+Component.options.__file = "G:\\jmz\\projects\\try\\src\\views\\take-out\\firstFloor.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] firstFloor.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -10811,7 +10811,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "F:\\projects\\webstormProjects\\try\\src\\views\\take-out\\secondFloor.vue"
+Component.options.__file = "G:\\jmz\\projects\\try\\src\\views\\take-out\\secondFloor.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] secondFloor.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -10855,7 +10855,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "F:\\projects\\webstormProjects\\try\\src\\views\\take-out\\thirdFloor.vue"
+Component.options.__file = "G:\\jmz\\projects\\try\\src\\views\\take-out\\thirdFloor.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] thirdFloor.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -10899,7 +10899,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "F:\\projects\\webstormProjects\\try\\src\\views\\take-out\\topHeader.vue"
+Component.options.__file = "G:\\jmz\\projects\\try\\src\\views\\take-out\\topHeader.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] topHeader.vue: functional components are not supported with templates, they should use render functions.")}
 
