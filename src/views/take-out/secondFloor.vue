@@ -49,22 +49,22 @@
            return{
                secondFoods:[
                    {
-                       img:'./src/imgs/secondFood1.jpg',
+                       img:'/imgs/secondFood1.jpg',
                        title:'热卖套餐',
                        des:'附近畅销美食'
                    },
                    {
-                       img:'./src/imgs/secondFood2.jpg',
+                       img:'/imgs/secondFood2.jpg',
                        title:'热卖套餐',
                        des:'附近畅销美食'
                    },
                    {
-                       img:'./src/imgs/secondFood3.jpg',
+                       img:'/imgs/secondFood3.jpg',
                        title:'热卖套餐',
                        des:'附近畅销美食'
                    },
                    {
-                       img:'./src/imgs/secondFood4.jpg',
+                       img:'/imgs/secondFood4.jpg',
                        title:'热卖套餐',
                        des:'附近畅销美食'
                    }

@@ -10,7 +10,7 @@
            </li>
            <!--<li @click="currentPage='find'" :class="[currentPage=='find'?current:'']">-->
            <li>
-               <a href="../../find.bundle.html" @click="currentPage='find'" :class="[currentPage=='find'?current:'']">
+               <a href="/find" @click="currentPage='find'" :class="[currentPage=='find'?current:'']">
                <i class="imooc-icon">&#xe94a;</i>
                <div class="smallFont">发现</div>
                </a>

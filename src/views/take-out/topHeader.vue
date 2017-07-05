@@ -1,21 +1,21 @@
 <template>
     <div class="topHeader">
         <div class="top">
-            <img class="placeIcon" src="../../imgs/location.png"/>
+            <img class="placeIcon" src="../../assets/imgs/location.png"/>
             <span>东方文荟苑</span>
-            <img class="solidArrow" src="../../imgs/solidArrow.png"/>
+            <img class="solidArrow" src="../../assets/imgs/solidArrow.png"/>
         </div>
         <div class="center" ref="inputSearch">
             <input type="text" class="bigSearch">
             <div class="inputText">
-                <img src="../../imgs/search.png"/>
+                <img src="../../assets/imgs/search.png"/>
                 <span>搜索商家、商品名称</span>
             </div>
         </div>
         <div class="center" id="topSearch" v-if="showTopSearch">
             <input type="text" class="bigSearch">
             <div class="inputText">
-                <img src="../../imgs/search.png"/>
+                <img src="../../assets/imgs/search.png"/>
                 <span>搜索商家、商品名称</span>
             </div>
         </div>

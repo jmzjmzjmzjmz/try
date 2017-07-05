@@ -5,7 +5,7 @@
             <span>{{item.des}}</span>
         </div>
         <div class="slider">
-            <img src="../../imgs/slider1.jpg" alt="">
+            <img src="../../assets/imgs/slider1.jpg" alt="">
         </div>
     </div>
 </template>
@@ -42,34 +42,34 @@
             return {
                 firstFloor: [
                     {
-                        img: './src/imgs/firstFood1.jpg',
+                        img: '/imgs/firstFood1.jpg',
                         des: '美食'
                     },
                     {
-                        img: './src/imgs/firstFood2.jpg',
+                        img: '/imgs/firstFood2.jpg',
                         des: '美食'
                     },
                     {
-                        img: './src/imgs/firstFood3.jpg',
+                        img: '/imgs/firstFood3.jpg',
                         des: '美食'
                     },
                     {
-                        img: './src/imgs/firstFood4.jpg',
+                        img: '/imgs/firstFood4.jpg',
                         des: '美食'
                     },
                     {
-                        img: './src/imgs/firstFood5.jpg',
+                        img: '/imgs/firstFood5.jpg',
                         des: '美食'
                     },{
-                        img: './src/imgs/firstFood6.jpg',
+                        img: '/imgs/firstFood6.jpg',
                         des: '美食'
                     },
                     {
-                        img: './src/imgs/firstFood7.jpg',
+                        img: '/imgs/firstFood7.jpg',
                         des: '美食'
                     },
                     {
-                        img: './src/imgs/firstFood8.jpg',
+                        img: '/imgs/firstFood8.jpg',
                         des: '美食'
                     }
 

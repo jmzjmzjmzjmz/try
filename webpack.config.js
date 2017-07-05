@@ -17,8 +17,8 @@ module.exports={
         find:"./src/js/find.js"
           },
     output:{
-        path:__dirname+'',
-        filename:'dist/js/[name].bundle.js'
+        path:__dirname+'/dist',
+        filename:'js/[name].bundle.js'
         //publicPath是打包之后发布的地址，发布后加上publicPath，引入的js文件会自动加上打包后的地址
         // publicPath:"http://www.test"
     },
@@ -45,7 +45,7 @@ module.exports={
             },
             {
                 test:/\.(png|jpg|gif|svg)$/i,
-                loaders:['url-loader?limit=1000&name=dist/images/[name]-[hash:5].[ext]',
+                loaders:['url-loader?limit=1000&name=/images/[name]-[hash:5].[ext]',
                     'image-webpack-loader']
                 //    url-loader对比file-loader?url-loader可以设置
                 //    img-webpack对图片进行压缩之后再打包
@@ -58,7 +58,7 @@ module.exports={
     },
     plugins:[
         new htmlWebpackPlugin({
-            filename:"index.html", //地址默认在output里的path中
+            filename:"Home.html", //地址默认在output里的path中
             template:"home.html",  //生成的html文件模板
             //将打包好的js文件加在head里
             //如果部分放在head，部分放在body,则inject:false
@@ -73,7 +73,7 @@ module.exports={
             chunks:['index']
         }),
         new htmlWebpackPlugin({
-            filename:"find.bundle.html", //地址默认在output里的path中
+            filename:"Find.html", //地址默认在output里的path中
             template:"find.html",  //生成的html文件模板
             chunks:['find']
         }),

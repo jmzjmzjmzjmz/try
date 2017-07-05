@@ -20,11 +20,11 @@ ul,li{
 }
 @font-face{
     font-family:'imooc-icon';
-    src: url("../fonts/icomoon.eot");
-    src: url("../fonts/icomoon.eot?#iefix") format("embedded-opentype")
-        ,url("../fonts/icomoon.svg") format("svg")
-        ,url("../fonts/icomoon.ttf") format("truetype")
-        ,url("../fonts/icomoon.woff") format("woff");
+    src: url("/fonts/icomoon.eot");
+    src: url("/fonts/icomoon.eot?#iefix") format("embedded-opentype")
+        ,url("/fonts/icomoon.svg") format("svg")
+        ,url("/fonts/icomoon.ttf") format("truetype")
+        ,url("/fonts/icomoon.woff") format("woff");
     font-weight: normal;
     font-style: normal;
 }
