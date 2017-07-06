@@ -16,10 +16,18 @@ app.get('/find',function(req,res){
 });
 app.post('/test',jsonParser,function(req,res){
     MongoClient.connect(DB_CONN_STR,function(err,db){
+        var collection=db.collection("site");
+        collection.find().toArray(function(err,result){
+            if(err){
+                console.log("Error:"+err);
+                return;
+            }
+            res.body=result;
+        })
         console.log("连接成功！");
     });
-   response={name:req.body.name};
-   res.end(JSON.stringify(response));
+    response={name:req.body.name};
+    res.end(JSON.stringify(response));
 });
 // 利用Express托管静态文件，可多次调用
 // 将静态资源文件所在的目录作为参数传递给express.static中间件就可以提供静态资源的访问了
