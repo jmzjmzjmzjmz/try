@@ -1,6 +1,7 @@
 /**
  * Created by Administrator on 2017/6/14.
  */
+var webpack=require('webpack');
 var htmlWebpackPlugin=require("html-webpack-plugin");
 var ExtractTextPlugin=require("extract-text-webpack-plugin");
 module.exports={
@@ -18,9 +19,9 @@ module.exports={
           },
     output:{
         path:__dirname+'/dist',
-        filename:'js/[name].bundle.js'
+        filename:'js/[name].bundle.js',
         //publicPath是打包之后发布的地址，发布后加上publicPath，引入的js文件会自动加上打包后的地址
-        // publicPath:"http://www.test"
+        publicPath:"http://localhost:8081"
     },
     module:{
         rules:[
@@ -78,6 +79,7 @@ module.exports={
             chunks:['find']
         }),
         // new ExtractTextPlugin("style.css")
+        new webpack.HotModuleReplacementPlugin()
     ],
     //厉害了，添加别名
     /*

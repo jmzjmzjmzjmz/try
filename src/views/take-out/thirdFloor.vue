@@ -1,6 +1,6 @@
 <template>
     <div class="thirdFloor">
-        <input type="text"><button @click="look">确定</button>
+        <input type="file" id="add"><button @click="look">确定</button>
     </div>
 </template>
 <style>
@@ -8,15 +8,17 @@
         clear: both;
         width:100%;
         height:80px;
-        background: red;
+        background: yellow;
     }
 </style>
 <script>
     export default{
         methods:{
             look:function(){
-                this.$http.post("/test",{name:"jmz"}).then(function(res){
-                    console.log(res.body)
+
+                var formData=new FormData(document.getElementById("add").value);
+                this.$http.post("/test",formData).then(function(res){
+                    console.log("成功");
                    })
                 }
             }

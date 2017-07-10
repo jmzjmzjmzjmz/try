@@ -1,3 +1,4 @@
+var fs=require("fs");
 var  MongoClient=require("mongodb").MongoClient;
 var DB_CONN_STR='mongodb://localhost:27017/runoob';
 var express=require("express");
@@ -15,19 +16,20 @@ app.get('/find',function(req,res){
     res.sendFile(path.join(__dirname,'../dist/Find.html'))
 });
 app.post('/test',jsonParser,function(req,res){
-    MongoClient.connect(DB_CONN_STR,function(err,db){
-        var collection=db.collection("site");
-        collection.find().toArray(function(err,result){
-            if(err){
-                console.log("Error:"+err);
-                return;
-            }
-            res.body=result;
-        })
-        console.log("连接成功！");
-    });
-    response={name:req.body.name};
-    res.end(JSON.stringify(response));
+    // 解决代码
+    // res.writeHead(200,{'Content-Type':'text/plain;charset=utf-8'});
+    // MongoClient.connect(DB_CONN_STR,function(err,db){
+    //     var collection=db.collection("site");
+    //     collection.find().toArray(function(err,result){
+    //         if(err){
+    //             console.log("Error:"+err);
+    //             return;
+    //         }
+    //         console.log("连接成功！");
+    //         res.end(JSON.stringify(result));
+    //     })
+    // });
+
 });
 // 利用Express托管静态文件，可多次调用
 // 将静态资源文件所在的目录作为参数传递给express.static中间件就可以提供静态资源的访问了
