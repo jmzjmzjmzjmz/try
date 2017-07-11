@@ -79,7 +79,7 @@ module.exports={
             chunks:['find']
         }),
         // new ExtractTextPlugin("style.css")
-        new webpack.HotModuleReplacementPlugin()
+        // new webpack.HotModuleReplacementPlugin()
     ],
     //厉害了，添加别名
     /*

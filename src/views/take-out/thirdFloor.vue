@@ -15,8 +15,8 @@
     export default{
         methods:{
             look:function(){
-
-                var formData=new FormData(document.getElementById("add").value);
+                var formData=new FormData(document.getElementById("add"));
+                console.log(formData);
                 this.$http.post("/test",formData).then(function(res){
                     console.log("成功");
                    })

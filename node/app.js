@@ -29,7 +29,8 @@ app.post('/test',jsonParser,function(req,res){
     //         res.end(JSON.stringify(result));
     //     })
     // });
-
+    console.log(req.body);
+    res.end();
 });
 // 利用Express托管静态文件，可多次调用
 // 将静态资源文件所在的目录作为参数传递给express.static中间件就可以提供静态资源的访问了
