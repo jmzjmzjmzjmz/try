@@ -1,4 +1,5 @@
-var fs=require("fs");
+// var fs=require("fs");
+var multiparty=require("multiparty");
 var  MongoClient=require("mongodb").MongoClient;
 var DB_CONN_STR='mongodb://localhost:27017/runoob';
 var express=require("express");
@@ -15,7 +16,7 @@ app.get('/',function(req,res){
 app.get('/find',function(req,res){
     res.sendFile(path.join(__dirname,'../dist/Find.html'))
 });
-app.post('/test',jsonParser,function(req,res){
+app.post('/try/test',jsonParser,function(req,res){
     // 解决代码
     // res.writeHead(200,{'Content-Type':'text/plain;charset=utf-8'});
     // MongoClient.connect(DB_CONN_STR,function(err,db){
@@ -29,7 +30,20 @@ app.post('/test',jsonParser,function(req,res){
     //         res.end(JSON.stringify(result));
     //     })
     // });
-    console.log(req.body);
+    // var data='';
+    // req.on('data',function(chunk){
+    //     data+=chunk;
+    // });
+    // req.on("end",function(){
+    //     console.log(data);
+    // })
+    // if(req.url === '/try/*' && req.method === 'POST'){
+        var form=new multiparty.Form();
+        form.uploadDir = "try/upload/";
+        form.parse(req,function(err,fields,files){
+            console.log(files);
+        });
+    // }
     res.end();
 });
 // 利用Express托管静态文件，可多次调用

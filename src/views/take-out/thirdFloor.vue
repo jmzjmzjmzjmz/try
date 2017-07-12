@@ -15,10 +15,12 @@
     export default{
         methods:{
             look:function(){
-                var formData=new FormData(document.getElementById("add"));
+                var file=document.getElementById("add").files[0];
+                var formData=new FormData();
+                formData.append('file',file);
                 console.log(formData);
-                this.$http.post("/test",formData).then(function(res){
-                    console.log("成功");
+                this.$http.post("/try/test",formData).then(function(res){
+                       console.log("成功");
                    })
                 }
             }
