@@ -1,4 +1,4 @@
-// var fs=require("fs");
+var fs=require("fs");
 var multiparty=require("multiparty");
 var  MongoClient=require("mongodb").MongoClient;
 var DB_CONN_STR='mongodb://localhost:27017/runoob';
@@ -39,12 +39,28 @@ app.post('/try/test',jsonParser,function(req,res){
     // })
     // if(req.url === '/try/*' && req.method === 'POST'){
         var form=new multiparty.Form();
-        form.uploadDir = "try/upload/";
+        form.uploadDir = "F:/projects/webstormProjects/try/dist/files/";
         form.parse(req,function(err,fields,files){
-            console.log(files);
+            // var fileTemp=JSON.stringify(files,null,2);
+            var fileTemp=JSON.stringify(files);
+            if(err){
+                console.log("parse error:"+err);
+            }else{
+                var inputFile=files.file[0];
+                var uploadPath=inputFile.path;
+                var dstPath=form.uploadDir+inputFile.originalFilename;
+                fs.rename(uploadPath,dstPath,function(err){
+                    if(err){
+                        console.log("rename:"+err);
+                    }else{
+                        console.log(files.file[0].path.substring(44,files.file[0].path.length));
+                    }
+                });
+            }
+            res.writeHead(200,{'Content-Type':'text/plain;charset=utf-8'});
+            res.end(fileTemp);
         });
     // }
-    res.end();
 });
 // 利用Express托管静态文件，可多次调用
 // 将静态资源文件所在的目录作为参数传递给express.static中间件就可以提供静态资源的访问了
