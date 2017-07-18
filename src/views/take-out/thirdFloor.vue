@@ -20,8 +20,9 @@
                 formData.append('file',file);
                 console.log(formData);
                 this.$http.post("/try/test",formData).then(function(res){
-                       console.log("成功");
+
                    })
+
                 }
             }
     }

@@ -5,7 +5,7 @@
             <span>{{item.des}}</span>
         </div>
         <div class="slider">
-            <img src="../../assets/imgs/slider1.jpg" alt="">
+            <img src="/imgs/slider1.jpg" alt="">
         </div>
     </div>
 </template>

@@ -12,7 +12,7 @@
 </template>
 <style>
     .main{
-        height:90%;
+        height:100%;
         position: relative;
         overflow-y: auto;
         overflow-x: hidden;
